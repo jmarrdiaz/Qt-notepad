@@ -16,6 +16,8 @@
 
 //Tarea de clase
 #include <QMessageBox>
+#include <QToolBar>
+#include <QIcon>
 
 
 class NotepadWindow : public QMainWindow

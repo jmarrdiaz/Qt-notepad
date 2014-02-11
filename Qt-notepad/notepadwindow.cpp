@@ -75,6 +75,16 @@ NotepadWindow::NotepadWindow(QWidget *parent)
     actAyudaAcercade_->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_A));
     mnuAyuda_->addAction(actAyudaAcercade_);
     connect(actAyudaAcercade_, SIGNAL(triggered()), this, SLOT(alAcercade()));
+
+    QPixmap botonabrir (":/new/prefix1/document-open.png");
+    QPixmap botonguardar (":/new/prefix1/document-save.png");
+    QToolBar *barra = addToolBar("barra principal");
+    QAction *abrir = barra -> addAction (QIcon(botonabrir), "Abrir fichero");
+    connect (abrir, SIGNAL (triggered()), this, SLOT (alAbrir()));
+
+    QAction *guardar = barra -> addAction (QIcon(botonguardar), "Guardar fichero");
+    connect (guardar, SIGNAL (triggered()), this, SLOT (alGuardar()));
+
 }
 
 NotepadWindow::~NotepadWindow()
